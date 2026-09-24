@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luminária Rasen Shuriken LED | Konoha Edição Limitada</title>
     
-    <!-- Fontes Estilo Anime/Tech -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
@@ -13,7 +12,6 @@
     <style>
         :root {
             --bg-dark: #050711;
-            --card-bg: #0d1222;
             --chakra-blue: #00f0ff;
             --chakra-glow: #0077ff;
             --orange-naruto: #ff6b00;
@@ -37,7 +35,6 @@
             line-height: 1.5;
         }
 
-        /* Banner de Urgência Topo */
         .top-banner {
             background: linear-gradient(90deg, #ff3333, var(--orange-naruto));
             color: #fff;
@@ -53,45 +50,44 @@
             box-shadow: 0 2px 15px rgba(255, 107, 0, 0.4);
         }
 
-        /* Container Principal com restrição Mobile */
         .container {
             max-width: 600px;
             margin: 0 auto;
             padding: 20px 16px 40px;
             position: relative;
+            z-index: 1;
+            background: rgba(5, 7, 17, 0.4);
+            box-shadow: 0 0 40px 40px rgba(5, 7, 17, 0.4);
         }
 
-        /* Elementos de Imersão do Anime (Personagens Flutuantes) */
+        /* EFEITO IMERSIVO: Personagens Fixos no Fundo */
         .anime-overlay {
-            position: absolute;
+            position: fixed; 
             z-index: -1;
-            opacity: 0.45; /* Deixa eles levemente transparentes para não atrapalhar a leitura */
+            opacity: 0.35; 
             filter: drop-shadow(0 0 15px var(--chakra-glow));
-            pointer-events: none; /* Impede que o clique trave no personagem */
+            pointer-events: none;
         }
 
         .naruto-1 {
-            top: 150px;
-            right: -80px;
-            width: 250px;
+            top: 5vh;
+            right: -60px;
+            width: 280px;
             transform: rotate(5deg);
         }
 
         .naruto-2 {
-            top: 1200px;
-            left: -100px;
-            width: 300px;
-            opacity: 0.35;
+            top: 40vh;
+            left: -80px;
+            width: 320px;
         }
 
         .naruto-3 {
-            bottom: 400px;
-            right: -90px;
-            width: 280px;
-            opacity: 0.4;
+            bottom: 2vh;
+            right: -50px;
+            width: 300px;
         }
 
-        /* Tag de Categoria */
         .badge {
             display: inline-block;
             background: rgba(0, 240, 255, 0.1);
@@ -107,7 +103,10 @@
             box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
         }
 
-        /* Título do Produto */
+        h1, .section-title {
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+        }
+
         h1 {
             font-family: 'Orbitron', sans-serif;
             font-size: 2.2rem;
@@ -119,7 +118,6 @@
             margin-bottom: 12px;
         }
 
-        /* Frase Épica */
         .epic-quote {
             font-style: italic;
             font-weight: 600;
@@ -128,12 +126,12 @@
             padding-left: 10px;
             margin-bottom: 25px;
             font-size: 1.1rem;
-            background: rgba(255, 107, 0, 0.05);
-            padding: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 12px;
             border-radius: 0 8px 8px 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
 
-        /* Palco do Produto Principal (Imagem dos Raios) */
         .hero-stage {
             position: relative;
             background: #000;
@@ -152,7 +150,6 @@
             border-radius: 14px;
         }
 
-        /* Caixa de Preço e Oferta */
         .price-box {
             background: rgba(13, 18, 34, 0.95);
             border: 1px solid rgba(0, 240, 255, 0.4);
@@ -160,10 +157,8 @@
             padding: 22px;
             text-align: center;
             margin-bottom: 20px;
-            position: relative;
-            z-index: 5;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(8px);
         }
 
         .price-old {
@@ -211,7 +206,6 @@
             text-transform: uppercase;
         }
 
-        /* Botão de Compra Persuasivo */
         .btn-buy {
             display: block;
             width: 100%;
@@ -229,15 +223,10 @@
             transition: all 0.3s ease;
             letter-spacing: 1px;
             margin-bottom: 12px;
-            position: relative;
-            z-index: 5;
         }
 
-        .btn-buy:active {
-            transform: scale(0.98);
-        }
+        .btn-buy:active { transform: scale(0.98); }
 
-        /* Seção de Título */
         .section-title {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.4rem;
@@ -259,25 +248,26 @@
             box-shadow: 0 0 10px var(--chakra-blue);
         }
 
-        /* Galeria / Imagens de Informação */
+        .desc-text {
+            color: #e2e8f0;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.9);
+            font-size: 1.05rem;
+        }
+
         .info-image {
             width: 100%;
             border-radius: 12px;
             border: 1px solid rgba(0, 240, 255, 0.3);
             margin-bottom: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-            position: relative;
-            z-index: 2;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.8);
         }
 
-        /* Grid de Fotos na Mão */
         .action-gallery {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
             margin-bottom: 30px;
-            position: relative;
-            z-index: 2;
         }
 
         .action-gallery img {
@@ -286,6 +276,7 @@
             border: 1px solid rgba(255,255,255,0.1);
             object-fit: cover;
             aspect-ratio: 1;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.6);
         }
 
         .action-gallery img:first-child {
@@ -293,21 +284,17 @@
             aspect-ratio: 16/9;
         }
 
-        /* Provas Sociais com Fotos */
-        .reviews-section {
-            margin-bottom: 40px;
-            position: relative;
-            z-index: 2;
-        }
+        .reviews-section { margin-bottom: 40px; }
 
         .review-card {
-            background: rgba(13, 18, 34, 0.85);
+            background: rgba(13, 18, 34, 0.9);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-left: 4px solid var(--chakra-blue);
             border-radius: 12px;
             padding: 18px;
             margin-bottom: 15px;
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
 
         .review-header {
@@ -338,7 +325,7 @@
 
         .review-text {
             font-size: 0.95rem;
-            color: var(--text-muted);
+            color: #d1d5db;
             margin-bottom: 12px;
         }
 
@@ -351,16 +338,14 @@
             border: 1px solid rgba(0, 240, 255, 0.2);
         }
 
-        /* Faixa Final de Garantia */
         .guarantee-box {
-            background: linear-gradient(180deg, rgba(13, 18, 34, 0.9) 0%, rgba(5, 7, 17, 1) 100%);
+            background: linear-gradient(180deg, rgba(13, 18, 34, 0.95) 0%, rgba(5, 7, 17, 1) 100%);
             border: 1px solid rgba(0, 240, 255, 0.3);
             border-radius: 16px;
             padding: 25px;
             text-align: center;
             margin-bottom: 30px;
-            position: relative;
-            z-index: 2;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.7);
         }
 
         .guarantee-box h3 {
@@ -372,7 +357,7 @@
 
         .guarantee-box p {
             font-size: 0.95rem;
-            color: var(--text-muted);
+            color: #d1d5db;
         }
 
         footer {
@@ -386,19 +371,18 @@
 </head>
 <body>
 
-    <!-- Urgência e Oferta Limitada -->
     <div class="top-banner">
         🔥 OFERTA DE LANÇAMENTO KONOHA: APENAS 4 UNIDADES EM ESTOQUE!
     </div>
 
+    <!-- FUNDO FIXO (PARALLAX) - Personagens Imersivos com os nomes originais perfeitos -->
+    <img src="96524.png" class="anime-overlay naruto-1" alt="Naruto Fundo 1">
+    <img src="96525.png" class="anime-overlay naruto-2" alt="Naruto Fundo 2">
+    <img src="96523.png" class="anime-overlay naruto-3" alt="Naruto Fundo 3">
+
+    <!-- CONTEÚDO QUE ROLA POR CIMA -->
     <div class="container">
         
-        <!-- Personagens de Fundo (Imersão) -->
-        <img src="96524.png" class="anime-overlay naruto-1" alt="Naruto Fundo 1">
-        <img src="96525.png" class="anime-overlay naruto-2" alt="Naruto Fundo 2">
-        <img src="96523.png" class="anime-overlay naruto-3" alt="Naruto Fundo 3">
-
-        <!-- Cabeçalho Principal -->
         <span class="badge">Acessório Cosplay & Colecionador</span>
         <h1>Luminária Rasen Shuriken LED</h1>
         
@@ -406,12 +390,10 @@
             "Eu não vou fugir, eu nunca volto atrás da minha palavra... Esse é o meu jeito ninja!"
         </div>
 
-        <!-- Palco do Produto Principal (Foto dos Raios) -->
         <div class="hero-stage">
-            <img src="96717.jpg" alt="Rasen Shuriken LED com Raios">
+            <img src="raios.jpg" alt="Rasen Shuriken LED com Raios">
         </div>
 
-        <!-- Ancoragem de Preço e Oferta Limitada -->
         <div class="price-box">
             <div class="price-old">De R$ 279,00</div>
             <div class="price-current">Por R$ 189,00</div>
@@ -423,31 +405,27 @@
             <div class="stock-text">Restam apenas 4 unidades com Frete Grátis</div>
         </div>
 
-        <!-- Botão CTA Principal -->
         <a href="SEU_LINK_DE_CHECKOUT_AQUI" class="btn-buy">GARANTIR MEU RASEN SHURIKEN</a>
 
-        <!-- Informações Técnicas e Cores -->
         <h2 class="section-title">Nível Jonin de Detalhes</h2>
-        <p style="color: var(--text-muted); margin-bottom: 15px;">Desenvolvido com materiais de alta resistência, rotação hiper-silenciosa e brilho intenso para criar a ilusão perfeita da técnica do Vento.</p>
+        <p class="desc-text">Desenvolvido com materiais de alta resistência, rotação hiper-silenciosa e brilho intenso para criar a ilusão perfeita da técnica do Vento.</p>
         
-        <img src="96716.jpg" class="info-image" alt="Tabela de Tamanho do Produto">
-        <img src="96715.png" class="info-image" style="background: #fff;" alt="Variações de Cores LED">
+        <img src="tabela.jpg" class="info-image" alt="Tabela de Tamanho do Produto">
+        <img src="cores.png" class="info-image" style="background: #fff;" alt="Variações de Cores LED">
 
-        <!-- O Produto em Ação (Na mão / No Escuro) -->
         <h2 class="section-title">O Poder na Sua Mão</h2>
-        <p style="color: var(--text-muted); margin-bottom: 15px;">Surpreenda todos nos eventos de cosplay ou transforme o visual do seu quarto à noite. Efeito real de redemoinho brilhante.</p>
+        <p class="desc-text">Surpreenda todos nos eventos de cosplay ou transforme o visual do seu quarto à noite. Efeito real de redemoinho brilhante.</p>
         
         <div class="action-gallery">
-            <img src="96713.png" alt="Produto girando na mão">
-            <img src="96712.png" alt="Produto com LED Azul">
-            <img src="96711.png" alt="Produto com LED Roxo">
+            <img src="mao.png" alt="Produto girando na mão">
+            <img src="azul.png" alt="Produto com LED Azul">
+            <!-- A imagem que renomeou para "branco" -->
+            <img src="branco.png" alt="Produto com LED Roxo">
         </div>
 
-        <!-- Depoimentos e Prova Social Completa -->
         <div class="reviews-section">
             <h2 class="section-title">Avaliações dos Shinobis</h2>
 
-            <!-- Depoimento 1 -->
             <div class="review-card">
                 <div class="review-header">
                     <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80" alt="Avatar Lucas" class="review-avatar">
@@ -460,7 +438,6 @@
                 <img src="96526.png" alt="Foto do produto enviado pelo cliente" class="review-photo">
             </div>
 
-            <!-- Depoimento 2 -->
             <div class="review-card">
                 <div class="review-header">
                     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80" alt="Avatar Beatriz" class="review-avatar">
@@ -472,7 +449,6 @@
                 <p class="review-text">"Comprei para o meu namorado que é louco por Naruto. A rotação é super fluida e as cores do LED são bem fortes. A caixa veio impecável e bem embalada."</p>
             </div>
 
-            <!-- Depoimento 3 -->
             <div class="review-card">
                 <div class="review-header">
                     <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&auto=format&fit=crop&q=80" alt="Avatar Matheus" class="review-avatar">
@@ -485,13 +461,11 @@
             </div>
         </div>
 
-        <!-- Garantia Incondicional -->
         <div class="guarantee-box">
             <h3>🔰 GARANTIA DE SATISFAÇÃO DE 30 DIAS</h3>
             <p>Se você receber o produto e não ficar 100% impressionado com a qualidade do brilho ou do acabamento, devolvemos 100% do seu dinheiro sem perguntas.</p>
         </div>
 
-        <!-- Botão Secundário de Fechamento -->
         <a href="SEU_LINK_DE_CHECKOUT_AQUI" class="btn-buy">COMPRAR COM DESCONTO AGORA</a>
 
         <footer>
