@@ -35,6 +35,28 @@
             line-height: 1.5;
         }
 
+        /* Animação de pulsação vibrante para chamar clique */
+        @keyframes pulseGlow {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 0 40px rgba(0, 240, 255, 0.8), 0 0 60px rgba(0, 119, 255, 0.5);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+            }
+        }
+
+        /* Efeito de brilho piscando no banner do topo */
+        @keyframes flashText {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
         .top-banner {
             background: linear-gradient(90deg, #ff3333, var(--orange-naruto));
             color: #fff;
@@ -48,6 +70,7 @@
             top: 0;
             z-index: 100;
             box-shadow: 0 2px 15px rgba(255, 107, 0, 0.4);
+            animation: flashText 2s infinite;
         }
 
         .container {
@@ -60,7 +83,7 @@
             box-shadow: 0 0 40px 40px rgba(5, 7, 17, 0.4);
         }
 
-        /* EFEITO IMERSIVO: Personagens Fixos no Fundo */
+        /* FUNDO FIXO (PARALLAX) - Personagens Imersivos */
         .anime-overlay {
             position: fixed; 
             z-index: -1;
@@ -201,11 +224,12 @@
 
         .stock-text {
             font-size: 0.85rem;
-            color: #ffaa00;
+            color: var(--ffaa00, #ffaa00);
             font-weight: 700;
             text-transform: uppercase;
         }
 
+        /* Botão Animado com Pulsação Constante */
         .btn-buy {
             display: block;
             width: 100%;
@@ -219,8 +243,8 @@
             text-decoration: none;
             text-align: center;
             border-radius: 14px;
-            box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
-            transition: all 0.3s ease;
+            animation: pulseGlow 2s infinite ease-in-out;
+            transition: all 0.2s ease;
             letter-spacing: 1px;
             margin-bottom: 12px;
         }
@@ -261,6 +285,30 @@
             border: 1px solid rgba(0, 240, 255, 0.3);
             margin-bottom: 20px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+        }
+
+        /* Estilo para os Vídeos em Loop (Substituindo os GIFs com leveza máxima) */
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .video-card {
+            width: 100%;
+            background: #000;
+            border: 2px solid var(--chakra-blue);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+
+        .video-card video {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
         }
 
         .action-gallery {
@@ -372,10 +420,10 @@
 <body>
 
     <div class="top-banner">
-        🌀 EDIÇÃO LIMITADA DE COLEÇÃO: GARANTA O SEU ANTES QUE ACABE! 🔥
+        🔥 OFERTA DE LANÇAMENTO KONOHA: APENAS 4 UNIDADES EM ESTOQUE!
     </div>
 
-    <!-- FUNDO FIXO (PARALLAX) - Personagens Imersivos com os nomes originais perfeitos -->
+    <!-- FUNDO FIXO (PARALLAX) - Personagens Imersivos -->
     <img src="96524.png" class="anime-overlay naruto-1" alt="Naruto Fundo 1">
     <img src="96525.png" class="anime-overlay naruto-2" alt="Naruto Fundo 2">
     <img src="96523.png" class="anime-overlay naruto-3" alt="Naruto Fundo 3">
@@ -405,19 +453,36 @@
             <div class="stock-text">Restam apenas 4 unidades com Frete Grátis</div>
         </div>
 
+        <!-- Botão com Animação de Pulsação -->
         <a href="SEU_LINK_DE_CHECKOUT_AQUI" class="btn-buy">GARANTIR MEU RASEN SHURIKEN</a>
+
+        <h2 class="section-title">Demonstração em Vídeo</h2>
+        <p class="desc-text">Veja o efeito real de rotação e o brilho intenso da lâmina de chakra em funcionamento.</p>
+        
+        <!-- SEÇÃO DOS 3 VÍDEOS EM LOOP (AUTOMÁTICOS) -->
+        <div class="video-grid">
+            <div class="video-card">
+                <video src="lv_0_20260924172902.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <div class="video-card">
+                <video src="lv_0_20260924172942.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <div class="video-card">
+                <video src="lv_0_20260924173009.mp4" autoplay muted loop playsinline></video>
+            </div>
+        </div>
 
         <h2 class="section-title">Nível Jonin de Detalhes</h2>
         <p class="desc-text">Desenvolvido com materiais de alta resistência, rotação hiper-silenciosa e brilho intenso para criar a ilusão perfeita da técnica do Vento.</p>
         
         <img src="tabela.jpg" class="info-image" alt="Tabela de Tamanho do Produto">
+
         <h2 class="section-title">O Poder na Sua Mão</h2>
         <p class="desc-text">Surpreenda todos nos eventos de cosplay ou transforme o visual do seu quarto à noite. Efeito real de redemoinho brilhante.</p>
         
         <div class="action-gallery">
             <img src="mao.png" alt="Produto girando na mão">
             <img src="azul.png" alt="Produto com LED Azul">
-            <!-- A imagem que renomeou para "branco" -->
             <img src="branco.png" alt="Produto com LED Roxo">
         </div>
 
@@ -444,18 +509,7 @@
                         <div class="review-stars">★★★★★ • Compra Verificada</div>
                     </div>
                 </div>
-                <p class="review-text">"Comprei para o meu namorado que é louco por Naruto. A rotação é super fluida e as cores do LED são bem fortes. A caixa veio impecável e bem embalada."</p>
-            </div>
-
-            <div class="review-card">
-                <div class="review-header">
-                    <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&auto=format&fit=crop&q=80" alt="Avatar Matheus" class="review-avatar">
-                    <div class="review-user-info">
-                        <h4>Matheus Uzumaki</h4>
-                        <div class="review-stars">★★★★★ • Compra Verificada</div>
-                    </div>
-                </div>
-                <p class="review-text">"Uso como peça central no meu setup gamer. De noite o quarto fica parecendo um templo ninja kkk. Nota 10/10!"</p>
+                <p class="review-text">"Comprei para o meu namorado que é louco por Naruto. A rotação é super fluida e as cores do LED são bem fortes. Caixa veio impecável."</p>
             </div>
         </div>
 
@@ -464,6 +518,7 @@
             <p>Se você receber o produto e não ficar 100% impressionado com a qualidade do brilho ou do acabamento, devolvemos 100% do seu dinheiro sem perguntas.</p>
         </div>
 
+        <!-- Botão Final com Animação de Pulsação -->
         <a href="SEU_LINK_DE_CHECKOUT_AQUI" class="btn-buy">COMPRAR COM DESCONTO AGORA</a>
 
         <footer>
