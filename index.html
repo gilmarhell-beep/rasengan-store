@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rasen Shuriken LED Pro | Domine o Chakra do Vento</title>
-    <!-- Fonte Temática Otaku/Tech -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <title>Luminária Rasen Shuriken LED | Edição Limitada Ninja</title>
     
+    <!-- Fontes Estilo Anime/Tech -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --bg-dark: #070913;
-            --chakra-blue: #00d2ff;
-            --chakra-glow: #0088ff;
-            --wind-white: #e6ffff;
-            --gold-accent: #ffb703;
-            --text-light: #f0f4f8;
+            --bg-dark: #050711;
+            --card-bg: #0d1222;
+            --chakra-blue: #00f0ff;
+            --chakra-glow: #0077ff;
+            --orange-naruto: #ff6b00;
+            --text-main: #f0f4f8;
+            --text-muted: #94a3b8;
         }
 
         * {
@@ -26,398 +30,267 @@
 
         body {
             background-color: var(--bg-dark);
-            color: var(--text-light);
+            color: var(--text-main);
             overflow-x: hidden;
+            line-height: 1.5;
         }
 
-        /* Banner de Urgência */
-        .top-bar {
-            background: linear-gradient(90deg, #ff4500, #ff8c00);
+        /* Banner de Urgência Topo */
+        .top-banner {
+            background: linear-gradient(90deg, #ff4500, var(--orange-naruto));
             color: #fff;
             text-align: center;
-            padding: 8px 12px;
+            padding: 8px 15px;
+            font-size: 0.85rem;
             font-weight: 700;
-            font-size: 0.9rem;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        /* Hero Section */
-        .hero {
-            position: relative;
-            padding: 30px 20px 40px;
-            text-align: center;
-            background: radial-gradient(circle at 50% 30%, rgba(0, 210, 255, 0.15) 0%, rgba(7, 9, 19, 1) 70%);
+        /* Container Principal */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px 16px;
         }
 
-        .badge-ninja {
+        /* Tag de Categoria */
+        .badge {
             display: inline-block;
-            background: rgba(0, 210, 255, 0.1);
+            background: rgba(0, 240, 255, 0.1);
             border: 1px solid var(--chakra-blue);
             color: var(--chakra-blue);
-            padding: 6px 16px;
+            padding: 4px 14px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            box-shadow: 0 0 12px rgba(0, 210, 255, 0.3);
+            margin-bottom: 12px;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
         }
 
+        /* Título do Produto */
         h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 2.1rem;
+            font-size: 2rem;
             line-height: 1.2;
             text-transform: uppercase;
             background: linear-gradient(180deg, #ffffff 0%, var(--chakra-blue) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 12px;
-            text-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+            margin-bottom: 10px;
         }
 
         .subtitle {
-            font-size: 1.05rem;
-            color: #a0aec0;
-            max-width: 600px;
-            margin: 0 auto 25px;
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
         }
 
-        /* Frame do Produto com Efeitos Visuais */
-        .product-stage {
+        /* Palco da Imagem Principal */
+        .hero-image-stage {
             position: relative;
-            max-width: 400px;
-            margin: 0 auto 25px;
+            background: radial-gradient(circle at center, rgba(0, 119, 255, 0.25) 0%, rgba(13, 18, 34, 0.8) 70%);
+            border: 1px solid rgba(0, 240, 255, 0.3);
             border-radius: 20px;
-            padding: 8px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(0, 210, 255, 0.3);
-            box-shadow: 0 0 30px rgba(0, 136, 255, 0.25);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 0 30px rgba(0, 119, 255, 0.25);
             overflow: hidden;
         }
 
-        .product-img {
-            position: relative;
-            z-index: 2;
+        .hero-image-stage img {
             width: 100%;
+            max-width: 380px;
             height: auto;
-            border-radius: 14px;
-            display: block;
-            object-fit: cover;
-            filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.5));
+            object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.5));
+            transition: transform 0.3s ease;
         }
 
-        /* Botão Principal de Conversão (CTA) */
-        .cta-container {
-            margin: 20px 0 10px;
+        .hero-image-stage img:hover {
+            transform: scale(1.02);
         }
 
+        /* Botão de Compra Persuasivo */
         .btn-buy {
             display: block;
             width: 100%;
-            max-width: 380px;
-            margin: 0 auto;
-            padding: 18px 20px;
-            background: linear-gradient(135deg, #00d2ff 0%, #0055ff 100%);
-            color: #fff;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--chakra-blue) 0%, var(--chakra-glow) 100%);
+            color: #000;
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 800;
+            font-size: 1.1rem;
+            font-weight: 900;
             text-transform: uppercase;
             text-decoration: none;
-            border: none;
+            text-align: center;
             border-radius: 12px;
-            box-shadow: 0 0 25px rgba(0, 210, 255, 0.6);
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.5);
             transition: all 0.3s ease;
-            cursor: pointer;
             letter-spacing: 1px;
+            margin-bottom: 10px;
         }
 
         .btn-buy:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 35px rgba(0, 210, 255, 0.9);
+            box-shadow: 0 0 35px rgba(0, 240, 255, 0.8);
         }
 
-        .guarantee-text {
+        .guarantee {
+            text-align: center;
             font-size: 0.85rem;
-            color: #8a99ad;
-            margin-top: 10px;
+            color: var(--text-muted);
+            margin-bottom: 35px;
         }
 
-        /* Grid de Benefícios */
-        .features-section {
-            padding: 35px 20px;
-            background: rgba(255, 255, 255, 0.01);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
+        /* Seção de Destaques Ninja */
         .section-title {
             font-family: 'Orbitron', sans-serif;
-            text-align: center;
-            font-size: 1.4rem;
-            color: var(--chakra-blue);
-            margin-bottom: 25px;
+            font-size: 1.3rem;
+            color: #fff;
             text-transform: uppercase;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 20px;
+            background: var(--chakra-blue);
+            box-shadow: 0 0 8px var(--chakra-blue);
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            max-width: 600px;
-            margin: 0 auto;
+            gap: 12px;
+            margin-bottom: 35px;
         }
 
         .feature-card {
-            background: rgba(15, 23, 42, 0.7);
-            border: 1px solid rgba(0, 210, 255, 0.2);
-            border-radius: 14px;
-            padding: 18px;
-            text-align: left;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 3px solid var(--chakra-blue);
+            border-radius: 10px;
+            padding: 15px;
         }
 
         .feature-card h3 {
             font-family: 'Orbitron', sans-serif;
-            color: #fff;
-            font-size: 1.05rem;
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-size: 1rem;
+            color: var(--chakra-blue);
+            margin-bottom: 5px;
         }
 
         .feature-card p {
-            color: #a0aec0;
             font-size: 0.9rem;
-            line-height: 1.4;
+            color: var(--text-muted);
         }
 
-        /* Galeria Em Ação */
-        .showcase-section {
-            padding: 35px 20px;
-            text-align: center;
-        }
-
+        /* Galeria Ilustrativa com Recortes */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 12px;
-            max-width: 600px;
-            margin: 0 auto;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 35px;
         }
 
         .gallery-item {
-            position: relative;
+            background: radial-gradient(circle, rgba(0,119,255,0.15) 0%, rgba(13,18,34,1) 100%);
+            border: 1px solid rgba(0, 240, 255, 0.2);
             border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(0, 210, 255, 0.25);
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             aspect-ratio: 1;
-            background: #0f172a;
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.4));
         }
 
-        /* Seção de Prova Social / Depoimentos */
-        .reviews-section {
-            padding: 40px 20px;
-            background: linear-gradient(180deg, rgba(7, 9, 19, 1) 0%, rgba(13, 22, 45, 0.8) 100%);
-            border-top: 1px solid rgba(0, 210, 255, 0.15);
-        }
-
-        .review-stats {
+        /* Rodapé / FAQ Rápido */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 25px;
             text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .rating-stars {
-            color: var(--gold-accent);
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-        }
-
-        .rating-text {
-            font-size: 0.95rem;
-            color: #a0aec0;
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .review-card {
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 14px;
-            padding: 16px;
-        }
-
-        .review-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-        }
-
-        .review-avatar {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--chakra-blue);
-        }
-
-        .review-info h4 {
-            font-size: 0.95rem;
-            color: #fff;
-            font-weight: 700;
-        }
-
-        .review-info span {
-            font-size: 0.8rem;
-            color: #00d2ff;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .review-comment {
-            font-size: 0.9rem;
-            color: #cbd5e1;
-            line-height: 1.4;
-        }
-
-        .verified-badge {
-            font-size: 0.75rem;
-            background: rgba(0, 210, 255, 0.15);
-            color: var(--chakra-blue);
-            padding: 2px 6px;
-            border-radius: 4px;
-            margin-left: 6px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
     </style>
 </head>
 <body>
 
-    <!-- Urgência -->
-    <div class="top-bar">
-        🔥 Edição Limitada Konoha: Restam apenas 7 unidades com Frete Grátis!
+    <!-- Barra Superior -->
+    <div class="top-banner">
+        ⚡ OFERTA LIMITADA: FRETE GRÁTIS PARA TODO O BRASIL ⚡
     </div>
 
-    <!-- Hero / Principal -->
-    <section class="hero">
-        <span class="badge-ninja">Jutsu de Liberação de Vento</span>
-        <h1>Rasen Shuriken LED Pro</h1>
-        <p class="subtitle">Sinta o poder do Chakra girando nas tuas mãos. Iluminação em 7 cores, rotação ciclônica e efeito de combate ultra-realista.</p>
+    <div class="container">
+        
+        <!-- Cabeçalho -->
+        <span class="badge">Acessório Cosplay & Coletável</span>
+        <h1>Luminária Rasen Shuriken LED</h1>
+        <p class="subtitle">Sinta a energia do Jutsu em suas mãos. Efeito de rotação realista, iluminação multicolorida e acabamento de altíssima precisão.</p>
 
-        <!-- Palco do Produto Principal -->
-        <div class="product-stage">
-            <img src="https://i.ibb.co/3s6KkG4/96180.jpg" alt="Rasen Shuriken Luminoso LED" class="product-img">
+        <!-- Imagem Principal Recortada -->
+        <div class="hero-image-stage">
+            <img src="produto-principal.png" alt="Luminária Rasen Shuriken LED em Funcionamento">
         </div>
 
-        <div class="cta-container">
-            <a href="#comprar" class="btn-buy">Garantir Meu Rasen Shuriken</a>
-            <p class="guarantee-text">🛡️ Envio Imediato + Garantia de Satisfação de 30 Dias</p>
-        </div>
-    </section>
+        <!-- Botão de Ação -->
+        <a href="#comprar" class="btn-buy">Garantir A Minha Agora</a>
+        <p class="guarantee">🔒 Compra 100% Segura • Satisfação Garantida</p>
 
-    <!-- Recursos Ninja (Benefícios) -->
-    <section class="features-section">
-        <h2 class="section-title">Especificações de Nível Jonin</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>⚡ Rotação Ciclônica Real</h3>
-                <p>Efeito de rotação de alta velocidade que simula perfeitamente as lâminas de vento do Jutsu original.</p>
-            </div>
-            <div class="feature-card">
-                <h3>⚡ Chakra de 7 Cores (LED)</h3>
-                <p>Alterne facilmente entre o azul clássico do Chakra, vermelho Kurama, verde, roxo e modos dinâmicos.</p>
-            </div>
-            <div class="feature-card">
-                <h3>⚡ Material Premium para Cosplay</h3>
-                <p>Acabamento resistente e leve, ideal para exibições, fotos, vídeos profissionais e eventos de Cosplay.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galeria de Demonstração -->
-    <section class="showcase-section">
-        <h2 class="section-title">Em Ação</h2>
+        <!-- Galeria do Anime -->
+        <h2 class="section-title">Estilo e Autenticidade</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="https://i.ibb.co/tBSx4c7/96183.png" alt="Rasen Shuriken na mão">
+                <img src="naruto-rasengan-1.png" alt="Naruto Chakra Vento">
             </div>
             <div class="gallery-item">
-                <img src="https://i.ibb.co/JvDqVrt/96181.png" alt="Efeito iluminação LED">
+                <img src="naruto-rasengan-2.png" alt="Naruto Rasengan">
             </div>
             <div class="gallery-item">
-                <img src="https://i.ibb.co/R9m4H1k/96184.png" alt="Efeito Naruto Cosplay">
-            </div>
-            <div class="gallery-item">
-                <img src="https://i.ibb.co/k07Q7zG/96182.png" alt="Cosplayer usando o item">
-            </div>
-        </div>
-    </section>
-
-    <!-- Prova Social / Depoimentos de Clientes -->
-    <section class="reviews-section">
-        <h2 class="section-title">Avaliações dos Shinobis</h2>
-        
-        <div class="review-stats">
-            <div class="rating-stars">★ ★ ★ ★ ★</div>
-            <div class="rating-text"><strong>4.9 / 5.0</strong> — Mais de 340 unidades entregues</div>
-        </div>
-
-        <div class="reviews-grid">
-            <!-- Depoimento 1 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80" alt="Avatar Cliente" class="review-avatar">
-                    <div class="review-info">
-                        <h4>Lucas "Uchiha" Silva <span class="verified-badge">Compra Verificada</span></h4>
-                        <span>★ ★ ★ ★ ★ • Há 2 dias</span>
-                    </div>
-                </div>
-                <p class="review-comment">"Caraca, impressionado com a qualidade! A rotação com as luzes acesas no escuro fica IDÊNTICO ao anime. Usei no evento de cosplay no fim de semana e todo mundo veio pedir pra tirar foto."</p>
-            </div>
-
-            <!-- Depoimento 2 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80" alt="Avatar Cliente" class="review-avatar">
-                    <div class="review-info">
-                        <h4>Beatriz Mendes <span class="verified-badge">Compra Verificada</span></h4>
-                        <span>★ ★ ★ ★ ★ • Há 5 dias</span>
-                    </div>
-                </div>
-                <p class="review-comment">"Comprei de presente pro meu namorado que é viciado em Naruto e ele quase chorou de emoção kkk. A bateria dura bastante e a troca de cores é bem fluida. Chegou super rápido!"</p>
-            </div>
-
-            <!-- Depoimento 3 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&auto=format&fit=crop&q=80" alt="Avatar Cliente" class="review-avatar">
-                    <div class="review-info">
-                        <h4>Matheus Uzumaki <span class="verified-badge">Compra Verificada</span></h4>
-                        <span>★ ★ ★ ★ ★ • Há 1 semana</span>
-                    </div>
-                </div>
-                <p class="review-comment">"A luz de LED é muito forte e o efeito do vento girando dá uma sensação surreal nas mãos. Valeu cada centavo, virou a peça principal da minha estante otaku."</p>
+                <img src="naruto-shippuden.png" alt="Naruto Shippuden Mode">
             </div>
         </div>
 
-        <div class="cta-container" style="margin-top: 30px;">
-            <a href="#comprar" class="btn-buy">Quero o Meu Rasen Shuriken</a>
+        <!-- Recursos -->
+        <h2 class="section-title">Diferenciais do Produto</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>🌀 Rotação Ciclônica Vibrante</h3>
+                <p>Mecanismo interno que simula o giro em alta velocidade do Rasen Shuriken original do anime.</p>
+            </div>
+            <div class="feature-card">
+                <h3>💡 Iluminação LED de Alta Densidade</h3>
+                <p>Níveis de brilho ajustáveis com efeito de luz expansiva perfeito para fotos, vídeos e decoração no escuro.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔋 Bateria Recarregável de Longa Duração</h3>
+                <p>Acompanha cabo USB para recarga rápida. Leve seu Jutsu para eventos, convenções e salas de jogos.</p>
+            </div>
         </div>
-    </section>
+
+        <!-- Botão Secundário no Fim da Página -->
+        <a href="#comprar" class="btn-buy" style="margin-top: 20px;">Comprar Com Desconto de Lançamento</a>
+
+        <footer>
+            <p>© 2026 Loja Ninja Pro. Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
 
 </body>
 </html>
