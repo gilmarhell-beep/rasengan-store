@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luminária Rasen Shuriken LED | Konoha Edição Limitada</title>
+    <title>Luminária Rasen Shuriken LED | Otaku GM</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +15,7 @@
             --chakra-blue: #00f0ff;
             --chakra-glow: #0077ff;
             --orange-naruto: #ff6b00;
+            --red-otaku: #ff0000; /* Vermelho da nova logo Otaku GM */
             --gold-star: #ffd700;
             --text-main: #f0f4f8;
             --text-muted: #94a3b8;
@@ -33,6 +34,26 @@
             color: var(--text-main);
             overflow-x: hidden;
             line-height: 1.5;
+        }
+
+        /* --- CABEÇALHO OTAKU GM --- */
+        .cabecalho-loja {
+            background-color: #000000;
+            text-align: center;
+            padding: 15px 20px;
+            width: 100%;
+            border-bottom: 2px solid rgba(255, 0, 0, 0.4);
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+
+        .cabecalho-loja img {
+            max-width: 220px; /* Tamanho ideal para leitura e destaque no celular */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.3)); /* Brilho vermelho imersivo na logo */
         }
 
         /* Animação de pulsação vibrante para os botões */
@@ -429,8 +450,13 @@
 <body>
 
     <div class="top-banner">
-        🔥 OFERTA DE LANÇAMENTO KONOHA: APENAS 4 UNIDADES EM ESTOQUE!
+        🔥 OFERTA DE LANÇAMENTO: APENAS 4 UNIDADES EM ESTOQUE!
     </div>
+
+    <!-- CABEÇALHO COM A LOGOMARCA OTAKU GM -->
+    <header class="cabecalho-loja">
+        <img src="98913.png" alt="Logomarca Otaku GM">
+    </header>
 
     <!-- FUNDO FIXO (PARALLAX) - Personagens Imersivos -->
     <img src="96524.png" class="anime-overlay naruto-1" alt="Naruto Fundo 1">
@@ -489,7 +515,7 @@
             <div class="video-card">
                 <video src="lv_0_20260924173009.mp4" autoplay muted loop playsinline></video>
             </div>
-            <div class="ninja-divider-quote">🔥 "Ilumine Konoha e transforme o seu setup com o verdadeiro Rasengan!"</div>
+            <div class="ninja-divider-quote">🔥 "Ilumine seu setup com o verdadeiro Rasengan!"</div>
         </div>
 
         <h2 class="section-title">Nível Jonin de Detalhes</h2>
@@ -546,30 +572,4 @@
 
         <div class="guarantee-box">
             <h3>🔰 GARANTIA DE SATISFAÇÃO DE 30 DIAS</h3>
-            <p>Se você receber o produto e não ficar 100% impressionado com a qualidade do brilho ou do acabamento, devolvemos 100% do seu dinheiro sem perguntas.</p>
-        </div>
-
-        <a href="https://autoree.pay.yampi.com.br/pay/WH8GMLHIXG" target="_blank" class="btn-buy">COMPRAR COM DESCONTO AGORA</a>
-
-        <footer>
-            <p>🔒 Pagamento Processado com Criptografia SSL de 256-bits</p>
-            <p>© 2026 Konoha Store Pro. Todos os direitos reservados.</p>
-        </footer>
-
-    </div>
-
-</body>
-</html>
-<style>
-    .cabecalho-loja {
-        background-color: #000000; /* Fundo preto para destacar a logótipo */
-        text-align: center;
-        padding: 15px 20px;
-        width: 100%;
-    }
-    
-    .cabecalho-loja img {
-        max-width: 200px; /* Pode aumentar ou diminuir este valor para ajustar o tamanho */
-        height: auto;
-    }
-</style>
+            <p>Se você receber o produto e não ficar
