@@ -15,7 +15,7 @@
             --chakra-blue: #00f0ff;
             --chakra-glow: #0077ff;
             --orange-naruto: #ff6b00;
-            --red-otaku: #ff0000; /* Vermelho da nova logo Otaku GM */
+            --red-otaku: #ff0000;
             --gold-star: #ffd700;
             --text-main: #f0f4f8;
             --text-muted: #94a3b8;
@@ -36,24 +36,39 @@
             line-height: 1.5;
         }
 
-        /* --- CABEÇALHO OTAKU GM --- */
+        /* --- CABEÇALHO OTAKU GM (INTEGRADO, LIMPO E PROPORCIONAL) --- */
         .cabecalho-loja {
-            background-color: #000000;
+            background-color: #000000; /* Fundo preto puro para fundir com a imagem */
             text-align: center;
-            padding: 15px 20px;
+            padding: 12px 20px;
             width: 100%;
-            border-bottom: 2px solid rgba(255, 0, 0, 0.4);
-            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2);
             position: relative;
             z-index: 10;
         }
 
         .cabecalho-loja img {
-            max-width: 220px; /* Tamanho ideal para leitura e destaque no celular */
+            max-width: 150px; /* Tamanho reduzido e profissional */
             height: auto;
             display: block;
             margin: 0 auto;
-            filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.3)); /* Brilho vermelho imersivo na logo */
+            /* Sem filtros ou neon para um visual totalmente clean e integrado */
+        }
+
+        /* --- BANNER DE OFERTA --- */
+        .top-banner {
+            background: linear-gradient(90deg, #ff3333, var(--orange-naruto));
+            color: #fff;
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(255, 107, 0, 0.4);
+            animation: flashText 2s infinite;
         }
 
         /* Animação de pulsação vibrante para os botões */
@@ -79,22 +94,6 @@
         @keyframes flashText {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.7; }
-        }
-
-        .top-banner {
-            background: linear-gradient(90deg, #ff3333, var(--orange-naruto));
-            color: #fff;
-            text-align: center;
-            padding: 10px 15px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 15px rgba(255, 107, 0, 0.4);
-            animation: flashText 2s infinite;
         }
 
         .container {
@@ -449,14 +448,15 @@
 </head>
 <body>
 
-    <div class="top-banner">
-        🔥 OFERTA DE LANÇAMENTO: APENAS 4 UNIDADES EM ESTOQUE!
-    </div>
-
-    <!-- CABEÇALHO COM A LOGOMARCA OTAKU GM -->
+    <!-- CABEÇALHO COM A LOGOMARCA OTAKU GM (AGORA NO TOPO ABSOLUTO) -->
     <header class="cabecalho-loja">
         <img src="98913.png" alt="Logomarca Otaku GM">
     </header>
+
+    <!-- BANNER DE OFERTA (AGORA ABAIXO DA LOGO) -->
+    <div class="top-banner">
+        🔥 OFERTA DE LANÇAMENTO: APENAS 4 UNIDADES EM ESTOQUE!
+    </div>
 
     <!-- FUNDO FIXO (PARALLAX) - Personagens Imersivos -->
     <img src="96524.png" class="anime-overlay naruto-1" alt="Naruto Fundo 1">
@@ -572,4 +572,4 @@
 
         <div class="guarantee-box">
             <h3>🔰 GARANTIA DE SATISFAÇÃO DE 30 DIAS</h3>
-            <p>Se você receber o produto e não ficar
+            <p>Se você receber o produto e n
